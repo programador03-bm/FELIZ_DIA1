@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✨ Para ti — Día Hot Wheels ✨</title>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Great Vibes', cursive;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      background: url('https://i.imgur.com/6o5oLvw.png') center center / cover no-repeat;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 50, 0.6);
+      z-index: 1;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #a0e8ff;
+      font-size: 3em;
+      margin-top: 30px;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .dedicatoria {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+      margin: 40px auto;
+      background: rgba(0, 0, 70, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    .dedicatoria p {
+      color: #cceeff;
+      font-size: 1.4em;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .btn-play {
+      position: relative;
+      z-index: 2;
+      display: block;
+      margin: 20px auto;
+      background: #66ccff;
+      color: #003344;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn-play:hover {
+      transform: scale(1.1);
+      background: #99ddff;
+    }
+
+    .video-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      z-index: 2;
+      width: 90%;
+      max-width: 640px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .glow {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(102,204,255,0.4) 0%, rgba(0,0,0,0) 70%);
+      animation: pulse 1.2s infinite ease-in-out;
+      filter: blur(40px);
+      border-radius: 20px;
+      display: none;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+      100% { opacity: 0.5; transform: scale(1); }
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      display: none;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #aaccee;
+      margin: 30px 10px;
+      font-size: 0.9em;
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #66ccff;
+      opacity: 0.8;
+      animation: fall 5s infinite ease-in;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Cars */
+    .cars {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      height: 150px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .car {
+      position: absolute;
+      bottom: 0;
+      width: 120px;
+      animation: driveRight 8s linear infinite;
+    }
+
+    .car:nth-child(2) {
+      width: 90px;
+      animation-delay: 4s;
+    }
+
+    @keyframes driveRight {
+      0% { left: -150px; transform: rotate(-3deg) scale(1); }
+      50% { left: 100%; transform: rotate(3deg) scale(1.1); }
+      100% { left: -150px; transform: rotate(-3deg) scale(1); }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
+      .dedicatoria p {
+        font-size: 1.2em;
+      }
+      .car {
+        width: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <h1 class="animate__animated animate__fadeInDown">✨ Mi regalo para ti ✨</h1>
+
+  <div class="dedicatoria animate__animated animate__fadeInUp">
+    <p>
+      Eres como una rosa azul: rara, hermosa y llena de magia.<br><br>
+      Cada día contigo es una carrera de sueños y emociones.<br>
+      Quiero que sepas que te admiro, te quiero y valoro cada momento.<br><br>
+      Gracias por ser mi copiloto en esta aventura llamada vida. ❤️
+    </p>
+  </div>
+
+  <button class="btn-play animate__animated animate__zoomIn">▶️ Reproducir Video</button>
+
+  <div class="video-container">
+    <div class="glow" id="glow"></div>
+    <video id="video" controls>
+      <source src="TikVid.io_7326966946015087878.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+
+  <div class="confetti" id="confetti"></div>
+
+  <div class="cars">
+    <img src="pngwing.com (1).png" alt="Carrito" class="car">
+    <img src="pngwing.com (2).png" alt="Carrito" class="car">
+  </div>
+
+  <footer class="animate__animated animate__fadeInUp">
+    Con todo mi cariño, para ti, el que acelera mi corazón. 💙
+  </footer>
+
+  <script>
+    // Crear confetti
+    function createConfettiPieces(num) {
+      const container = document.getElementById('confetti');
+      for (let i = 0; i < num; i++) {
+        const piece = document.createElement('div');
+        piece.classList.add('confetti-piece');
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.animationDelay = (Math.random() * 5) + 's';
+        container.appendChild(piece);
+      }
+    }
+    createConfettiPieces(150);
+
+    // Reproducir video y mostrar luz
+    const btn = document.querySelector('.btn-play');
+    btn.addEventListener('click', () => {
+      const video = document.getElementById('video');
+      const glow = document.getElementById('glow');
+      video.style.display = 'block';
+      glow.style.display = 'block';
+      video.play();
+      btn.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
